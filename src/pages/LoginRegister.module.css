@@ -1,0 +1,161 @@
+/* LoginRegister.module.css */
+
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eee;
+}
+
+.formContainer {
+  background: #222831;
+  padding: 2.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #ff4f5a;
+  text-shadow: 0 0 8px #ff4f5a;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #393e46;
+  color: #eee;
+  font-size: 1rem;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+input::placeholder {
+  color: #999;
+  font-weight: 500;
+}
+
+input:focus {
+  outline: none;
+  background-color: #4e5461;
+  box-shadow: 0 0 8px #ff4f5a;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(90deg, #ff4f5a 0%, #ff896f 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 79, 90, 0.4);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #ff3b47 0%, #ff6f5f 100%);
+  box-shadow: 0 8px 20px rgba(255, 59, 71, 0.7);
+}
+
+.errorMessage {
+  color: #ff6b6b;
+  background-color: #3a1f1f;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 10px #ff6b6b66;
+  animation: pulseError 1.5s infinite;
+}
+
+@keyframes pulseError {
+  0%, 100% {
+    box-shadow: 0 0 10px #ff6b6b66;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff6b6baa;
+  }
+}
+
+p {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+p a {
+  color: #ff4f5a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: #ff896f;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 480px) {
+  .pageWrapper {
+    padding: 1rem;
+  }
+
+  .formContainer {
+    padding: 2rem 1.5rem;
+    max-width: 320px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.75);
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 0.65rem;
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+}
+

@@ -1,0 +1,127 @@
+/* Profile.module.css */
+.profile {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #222;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(255, 79, 90, 0.3);
+  color: #eee;
+  font-family: 'Inter', sans-serif;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #ff4f5a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 12px #ff4f5aaa;
+  user-select: none;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.info {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.info b {
+  width: 80px;
+  color: #ff4f5a;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+button {
+  background: #ff4f5a;
+  border: none;
+  color: white;
+  padding: 0.65rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 79, 90, 0.5);
+}
+
+button:hover {
+  background: #e03e47;
+  box-shadow: 0 6px 18px rgba(224, 62, 71, 0.6);
+  transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .profile {
+    max-width: 90vw;
+    margin: 2rem auto;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 6px 18px rgba(255, 79, 90, 0.4);
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px #ff4f5aaa;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .info {
+    font-size: 1rem;
+    gap: 0.5rem;
+  }
+
+  .info b {
+    width: 70px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.6rem 0;
+    font-size: 1rem;
+  }
+
+  button:hover {
+    transform: none; /* убрать масштабирование, чтобы не съезжало */
+  }
+}

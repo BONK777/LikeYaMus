@@ -1,0 +1,104 @@
+.trackItem {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.trackItem:hover {
+  background-color: #3f3f3f;
+  box-shadow: 0 6px 15px rgba(255, 79, 90, 0.5);
+  transform: translateY(-3px);
+}
+
+.trackInfo {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.trackTitle {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+  color: #ff4f5a;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.trackArtist {
+  font-size: 0.9rem;
+  color: #bbb;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.playButton {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  background-color: #ff4f5a;
+  border-radius: 50%;
+  color: white;
+  font-weight: 700;
+  user-select: none;
+}
+
+.playButton:hover {
+  background-color: #e03e47;
+  box-shadow: 0 6px 15px rgba(224, 62, 71, 0.8);
+}
+
+/* Мобильная адаптация */
+@media (max-width: 480px) {
+  .trackItem {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+  }
+
+  .trackInfo {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .trackTitle {
+    font-size: 1rem;
+    white-space: normal; /* чтобы заголовок переносился */
+    overflow: visible;
+  }
+
+  .trackArtist {
+    font-size: 0.85rem;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .playButton {
+    width: 34px;
+    height: 34px;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    align-self: flex-end;
+  }
+}

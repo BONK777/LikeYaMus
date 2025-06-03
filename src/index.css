@@ -1,0 +1,49 @@
+/* src/index.css */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* для мобильных лучше читаемый базовый размер шрифта */
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Мобильные улучшения */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px; /* чуть меньше для узких экранов */
+    line-height: 1.5;
+  }
+
+  /* Увеличим "тап-зону" для интерактивных элементов */
+  button, a {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Запретим перенос слов */
+  a, button {
+    word-break: break-word;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  /* Увеличим минимальный размер кнопок для удобства на мобилке */
+  min-height: 2.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
