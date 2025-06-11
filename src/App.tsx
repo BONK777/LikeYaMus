@@ -14,6 +14,7 @@ import NotFound from './pages/NotFound';
 import TrackPage from './pages/TrackPage';
 import Artist from './pages/Artist';
 
+
 import Header from './components/Header';
 
 const App: React.FC = () => {
@@ -21,11 +22,8 @@ const App: React.FC = () => {
     <UserProvider>
       <Router>
         <Routes>
-          {/* Публичные маршруты */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-
-          {/* Защищённые маршруты с общим хедером */}
           <Route
             path="/"
             element={

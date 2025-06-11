@@ -1,0 +1,73 @@
+// tracksData.ts
+export const tracks = [
+  {
+    id: '1',
+    title: 'Neon Skyline',
+    artist: 'Andy Shauf',
+    cover: 'https://images.unsplash.com/photo-1507838153414-b4b713384a76',
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+  },
+  {
+    id: '2',
+    title: 'Golden Hour',
+    artist: 'Kacey Musgraves',
+    cover: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f',
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+  },
+  {
+    id: '3',
+    title: 'Rainy Days',
+    artist: 'Cloud Whisper',
+    cover: 'https://picsum.photos/seed/cover3/300/300',
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+    },
+  {
+    id: '4',
+    title: 'Space Song',
+    artist: 'Beach House',
+    cover: 'https://images.unsplash.com/photo-1503602642458-232111445657',
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
+  },
+  {
+    id: '5',
+    title: 'Jazz Vibes',
+    artist: 'SaxMan',
+    cover: 'https://picsum.photos/seed/cover5/300/300',
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
+    },
+  {
+    id: '6',
+    title: 'Taro',
+    artist: 'alt-J',
+    cover: 'https://images.unsplash.com/photo-1465101162946-4377e57745c3',
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
+  },
+  {
+    id: '7',
+    title: 'The Less I Know The Better',
+    artist: 'Tame Impala',
+    cover: 'https://images.unsplash.com/photo-1519608487953-e999c86e7455',
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
+  },
+  {
+    id: '8',
+    title: 'Pink + White',
+    artist: 'Frank Ocean',
+    cover: 'https://images.unsplash.com/photo-1501004318641-b39e6451bec6',
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
+  },
+  {
+    id: '9',
+    title: 'Lofi Chill',
+    artist: 'Beats Maker',
+    cover: 'https://picsum.photos/seed/cover9/300/300',
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3',
+    },
+  {
+    id: '10',
+    title: 'Night Drive',
+    artist: 'Synth Lord',
+    cover: 'https://picsum.photos/seed/cover10/300/300',
+    src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3',
+    },
+];

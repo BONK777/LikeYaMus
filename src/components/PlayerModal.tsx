@@ -6,6 +6,7 @@ interface PlayerModalProps {
   isOpen: boolean;
   onClose: () => void;
   src: string | null;
+  cover?: string;
   title?: string;
   artist?: string;
   onEnded: () => void;
@@ -15,6 +16,7 @@ const PlayerModal: React.FC<PlayerModalProps> = ({
   isOpen,
   onClose,
   src,
+  cover,
   title,
   artist,
   onEnded,
@@ -24,7 +26,14 @@ const PlayerModal: React.FC<PlayerModalProps> = ({
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <button className={styles.closeButton} onClick={onClose}>×</button>
+        <button
+          className={styles.closeButton}
+          onClick={onClose}
+          aria-label="Close player modal"
+        >
+          <span className={styles.closeIcon} />
+        </button>
+        {cover && <img src={cover} alt={`${title} cover`} className={styles.cover} />}
         <h2>{title}</h2>
         <h4>{artist}</h4>
         <Player src={src} title={title} artist={artist} onEnded={onEnded} />

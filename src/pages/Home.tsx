@@ -1,35 +1,7 @@
 import React, { useState } from 'react';
 import TrackItem from '../components/TrackItem';
-import PlayerModal from '../components/PlayerModal'; // заменили Player
-
-
-interface Track {
-  id: string;
-  title: string;
-  artist: string;
-  audioSrc: string;
-}
-
-const tracks: Track[] = [
-  {
-    id: '1',
-    title: 'Song One',
-    artist: 'Artist A',
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-  },
-  {
-    id: '2',
-    title: 'Song Two',
-    artist: 'Artist B',
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-  },
-  {
-    id: '3',
-    title: 'Song Three',
-    artist: 'Artist C',
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-  },
-];
+import PlayerModal from '../components/PlayerModal';
+import { tracks } from '../api/tracks';
 
 const Home: React.FC = () => {
   const [playingTrackIndex, setPlayingTrackIndex] = useState<number | null>(null);
@@ -64,14 +36,14 @@ const Home: React.FC = () => {
 
       <input
         type="text"
-        placeholder="Search tracks or artists..."
+        placeholder="Поиск треков или артистов..."
         value={searchTerm}
         onChange={e => setSearchTerm(e.target.value)}
         style={{ padding: '0.5rem', width: '100%', marginBottom: '1rem' }}
       />
 
       {filteredTracks.length === 0 ? (
-        <p>No tracks found</p>
+        <p>Ничего не найдено</p>
       ) : (
         filteredTracks.map(track => (
           <TrackItem
@@ -79,6 +51,7 @@ const Home: React.FC = () => {
             id={track.id}
             title={track.title}
             artist={track.artist}
+            cover={track.cover}
             onPlay={handlePlay}
           />
         ))
@@ -86,12 +59,13 @@ const Home: React.FC = () => {
 
       <PlayerModal
         isOpen={playingTrack !== null}
-        src={playingTrack?.audioSrc || null}
+        src={playingTrack?.src || null}
+        cover={playingTrack?.cover}
         title={playingTrack?.title}
         artist={playingTrack?.artist}
         onClose={() => setPlayingTrackIndex(null)}
         onEnded={handleEnded}
-    />
+      />
     </div>
   );
 };

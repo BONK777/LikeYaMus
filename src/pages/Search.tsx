@@ -1,33 +1,6 @@
 import React, { useState } from 'react';
 import TrackItem from '../components/TrackItem';
-
-interface Track {
-  id: string;
-  title: string;
-  artist: string;
-  audioSrc: string;
-}
-
-const tracks: Track[] = [
-  {
-    id: '1',
-    title: 'Song One',
-    artist: 'Artist A',
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
-  },
-  {
-    id: '2',
-    title: 'Song Two',
-    artist: 'Artist B',
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
-  },
-  {
-    id: '3',
-    title: 'Song Three',
-    artist: 'Artist C',
-    audioSrc: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
-  },
-];
+import { tracks } from '../api/tracks'; // общий массив треков
 
 const Search: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -58,6 +31,7 @@ const Search: React.FC = () => {
             id={track.id}
             title={track.title}
             artist={track.artist}
+            cover={track.cover}
             onPlay={() => {}}
           />
         ))

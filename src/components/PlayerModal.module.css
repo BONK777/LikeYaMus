@@ -7,7 +7,6 @@
   max-height: calc(100vh - 90px);
   overflow-y: auto;
 
-  /* Фон затемнения за модалкой */
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   display: flex;
@@ -32,10 +31,8 @@
   box-sizing: border-box;
 }
 
-/* Закрывающая кнопка */
 .closeButton {
-  top: 0.5rem;
-  right: 0.75rem;
+ position: absolute;
   background: none;
   border: none;
   color: #ff4f5a;
@@ -43,8 +40,42 @@
   font-weight: bold;
   cursor: pointer;
   line-height: 1;
+  width: 50px;
+  height: 50px;
+  left: 9.3em;
+  top: 0px;
+  box-shadow: none;
+  border: none;
   padding: 0;
   user-select: none;
+}
+
+.closeIcon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.closeIcon::before,
+.closeIcon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 2px;
+  background-color: #ff4f5a;
+  transform-origin: center;
+  border-radius: 1px;
+}
+
+.closeIcon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.closeIcon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 h2, h4 {
@@ -56,6 +87,16 @@ h2, h4 {
 h4 {
   font-weight: 400;
   color: #ccc;
+}
+
+.cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Мобильная адаптация */

@@ -6,10 +6,11 @@ interface Props {
   id: string;
   title: string;
   artist: string;
+  cover?: string;
   onPlay?: (id: string) => void;
 }
 
-const TrackItem: React.FC<Props> = ({ id, title, artist, onPlay }) => {
+const TrackItem: React.FC<Props> = ({ id, title, artist, cover, onPlay }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -22,11 +23,23 @@ const TrackItem: React.FC<Props> = ({ id, title, artist, onPlay }) => {
   };
 
   return (
-    <div className={styles.trackItem} onClick={handleClick} role="button" tabIndex={0} onKeyDown={e => { if(e.key === 'Enter') handleClick(); }}>
+    <div
+      className={styles.trackItem}
+      onClick={handleClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={e => {
+        if (e.key === 'Enter') handleClick();
+      }}
+    >
+      {cover && (
+        <img src={cover} alt={`${title} cover`} className={styles.coverImage} />
+      )}
       <div className={styles.trackInfo}>
         <h3 className={styles.trackTitle} title={title}>{title}</h3>
         <p className={styles.trackArtist} title={artist}>{artist}</p>
       </div>
+
       {onPlay && (
         <button
           className={styles.playButton}

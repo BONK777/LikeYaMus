@@ -69,7 +69,16 @@
   box-shadow: 0 6px 15px rgba(224, 62, 71, 0.8);
 }
 
-/* Мобильная адаптация */
+.coverImage {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+
 @media (max-width: 480px) {
   .trackItem {
     flex-direction: column;

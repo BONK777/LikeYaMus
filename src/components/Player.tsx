@@ -15,18 +15,15 @@ const Player: React.FC<PlayerProps> = ({ src, title, artist, onEnded }) => {
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  // Обновление источника трека
+  // При смене src — загружаем новый трек и запускаем
   useEffect(() => {
     if (src && audioRef.current) {
       audioRef.current.pause();
       audioRef.current.load();
 
-      audioRef.current
-        .play()
-        .then(() => {
-          setIsPlaying(true);
-        })
-        .catch((err) => {
+      audioRef.current.play()
+        .then(() => setIsPlaying(true))
+        .catch(err => {
           console.error('Не удалось воспроизвести трек:', err);
           setIsPlaying(false);
         });
@@ -37,14 +34,14 @@ const Player: React.FC<PlayerProps> = ({ src, title, artist, onEnded }) => {
     }
   }, [src]);
 
-  // Установка громкости
+  // Обновляем громкость
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = volume;
     }
   }, [volume]);
 
-  // Обработка изменения времени воспроизведения
+  // Обновление прогресса воспроизведения
   const onTimeUpdate = () => {
     if (audioRef.current) {
       setProgress(audioRef.current.currentTime);
@@ -52,7 +49,7 @@ const Player: React.FC<PlayerProps> = ({ src, title, artist, onEnded }) => {
     }
   };
 
-  // Перемотка трека
+  // Перемотка
   const onSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const time = parseFloat(e.target.value);
     if (audioRef.current) {
@@ -61,7 +58,7 @@ const Player: React.FC<PlayerProps> = ({ src, title, artist, onEnded }) => {
     }
   };
 
-  // Переключение воспроизведения
+  // Переключение Play/Pause
   const togglePlay = () => {
     if (!audioRef.current) return;
 
@@ -69,19 +66,25 @@ const Player: React.FC<PlayerProps> = ({ src, title, artist, onEnded }) => {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      audioRef.current
-        .play()
+      audioRef.current.play()
         .then(() => setIsPlaying(true))
-        .catch((err) => {
+        .catch(err => {
           console.error('Ошибка при воспроизведении:', err);
           setIsPlaying(false);
         });
     }
   };
 
-  // Изменение громкости
+  // Управление громкостью
   const onVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setVolume(parseFloat(e.target.value));
+  };
+
+  // Формат времени mm:ss
+  const formatTime = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
   return (
@@ -111,8 +114,8 @@ const Player: React.FC<PlayerProps> = ({ src, title, artist, onEnded }) => {
             className={styles.progressInput}
           />
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: '#aaa' }}>
-            <span>{new Date(progress * 1000).toISOString().substr(14, 5)}</span>
-            <span>{new Date(duration * 1000).toISOString().substr(14, 5)}</span>
+            <span>{formatTime(progress)}</span>
+            <span>{formatTime(duration)}</span>
           </div>
         </div>
 
