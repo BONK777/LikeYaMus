@@ -18,7 +18,7 @@ export const tracks = [
     id: '3',
     title: 'Rainy Days',
     artist: 'Cloud Whisper',
-    cover: 'https://picsum.photos/seed/cover3/300/300',
+    cover: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4',
     src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
     },
   {
@@ -32,7 +32,7 @@ export const tracks = [
     id: '5',
     title: 'Jazz Vibes',
     artist: 'SaxMan',
-    cover: 'https://picsum.photos/seed/cover5/300/300',
+    cover: 'https://images.unsplash.com/photo-1496317899792-9d7dbcd928a1',
     src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3',
     },
   {
@@ -60,14 +60,14 @@ export const tracks = [
     id: '9',
     title: 'Lofi Chill',
     artist: 'Beats Maker',
-    cover: 'https://picsum.photos/seed/cover9/300/300',
+    cover: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470',
     src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3',
     },
   {
     id: '10',
     title: 'Night Drive',
     artist: 'Synth Lord',
-    cover: 'https://picsum.photos/seed/cover10/300/300',
+    cover: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc',
     src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3',
     },
 ];
